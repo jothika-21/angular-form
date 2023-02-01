@@ -1,0 +1,95 @@
+<section class="bg-image">
+    <div class="mask d-flex align-items-center gradient-custom-3">
+        <div class="container my-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5 fw-bold">REGISTER</h2>
+
+                            <form [formGroup]="Register" (ngSubmit)="onSubmit()">
+
+                                <div class="form-outline mt-4">
+                                    <label class="form-label fw-bold mb-2" for="form3Example1cg">LOGIN</label>
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-xl"
+                                        [ngClass]="{ 'is-invalid': submitted && f['names'].errors || f['names'].touched&& f['names'].errors }"
+                                        formControlName="names" [(ngModel)]="teacherobj.names" />
+                                    <div
+                                        *ngIf="submitted && f['names'].errors|| f['names'].touched&& f['names'].errors">
+                                        <p style="color: red;">Name is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mt-4">
+                                    <label class="form-label fw-bold mb-2" for="form3Example1cg">DOB</label>
+                                    <input type="date" id="form3Example1cg" class="form-control form-control-xl"
+                                        [ngClass]="{ 'is-invalid': submitted && f['dateofbirth'].errors || f['dateofbirth'].touched&& f['dateofbirth'].errors }"
+                                        formControlName="dateofbirth" [(ngModel)]="teacherobj.dateofbirth" />
+                                    <div
+                                        *ngIf="submitted && f['dateofbirth'].errors|| f['dateofbirth'].touched&& f['dateofbirth'].errors">
+                                        <p style="color: red;">Dateofbirth is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mt-4">
+                                    <label class="form-label fw-bold mb-2" for="form3Example1cg">PHONE.NO</label>
+                                    <input type="number" id="form3Example1cg" class="form-control form-control-xl"
+                                        formControlName="phone" [(ngModel)]="teacherobj.phone" [ngClass]="{ 'border-danger && is-invalid': submitted &&
+                                        f['phone'].errors || f['phone'].touched && f['phone'].errors }" />
+                                    <div style="color: red;"
+                                        *ngIf="submitted && f['phone'].errors|| f['phone']. dirty && f['phone'].errors || f['phone'].touched && f['phone'].errors">
+                                        Phone no is required
+                                        <span style="color: red;" *ngIf="f['phone'].errors?.['pattern']">You Must Be
+                                            Valid One</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mt-4">
+                                    <label class="form-label fw-bold mb-2" for="form3Example3cg">EMAIL </label>
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-xl"
+                                        formControlName="emailId" [(ngModel)]="teacherobj.emailId" [ngClass]="{ 'border-danger && is-invalid': submitted &&
+                                        f['emailId'].errors || f['emailId'].touched && f['emailId'].errors }" />
+                                    <div style="color: red;"
+                                        *ngIf="submitted && f['emailId'].errors|| f['emailId']. dirty && f['emailId'].errors || f['emailId'].touched && f['emailId'].errors">
+                                        Email is required
+                                        <span style="color: red;" *ngIf="f['emailId'].errors?.['pattern']">You Must Be
+                                            Valid One</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mt-4">
+                                    <label class="form-label fw-bold mb-2" for="form3Example1cg">QUALIFICATION</label>
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-xl"
+                                        [ngClass]="{ 'is-invalid': submitted && f['qualification'].errors || f['qualification'].touched&& f['qualification'].errors }"
+                                        formControlName="qualification" [(ngModel)]="teacherobj.qualification" />
+                                    <div
+                                        *ngIf="submitted && f['qualification'].errors|| f['qualification'].touched&& f['qualification'].errors">
+                                        <p style="color: red;">Qualification is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mt-4">
+                                    <label class="form-label fw-bold mb-2" for="form3Example1cg">EXPERIENCE</label>
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-xl"
+                                        [ngClass]="{ 'is-invalid': submitted && f['experience'].errors || f['experience'].touched&& f['experience'].errors }"
+                                        formControlName="experience" [(ngModel)]="teacherobj.experience" />
+                                    <div
+                                        *ngIf="submitted && f['experience'].errors|| f['experience'].touched&& f['experience'].errors">
+                                        <p style="color: red;">Experience is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button type="submit"
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

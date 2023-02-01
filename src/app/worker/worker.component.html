@@ -1,0 +1,109 @@
+<section class="" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-2">Register</p>
+
+                                <form [formGroup]="worker" (ngSubmit)="onSubmit()" class="mx-1 mx-md-4">
+
+                                    <div class="d-flex flex-row align-items-center mb-3">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw mb-4"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="text" id="form3Example1c" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f['name'].errors || f['name'].touched&& f['name'].errors }"
+                                                formControlName="name" [(ngModel)]="workerobj.name"/>
+                                            <label class="form-label" for="form3Example1c">Your Name</label>
+                                            <div
+                                                *ngIf="submitted && f['name'].errors|| f['name'].touched&& f['name'].errors">
+                                                <p style="color: red;">Name is required</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-3">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw mb-4"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="email" id="form3Example3c" class="form-control" [ngClass]="{ 'border-danger && is-invalid': submitted &&
+                                        f['email'].errors || f['email'].touched && f['email'].errors }"
+                                                formControlName="email" [(ngModel)]="workerobj.email" />
+                                            <label class="form-label" for="form3Example3c">Your Email</label>
+                                            <div style="color: red;"
+                                                *ngIf="submitted && f['email'].errors|| f['email']. dirty && f['email'].errors || f['email'].touched && f['email'].errors">
+                                                Email is required
+                                                <span style="color: red;" *ngIf="f['email'].errors?.['pattern']">You
+                                                    Must Be Valid One</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-phone fa-lg me-3 fa-fw mb-4"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="number" id="form3Example4c" class="form-control"
+                                                [ngClass]="{ 'border-danger && is-invalid': submitted &&
+                                            f['PhoneNumber'].errors || f['PhoneNumber'].touched && f['PhoneNumber'].errors }"
+                                            [(ngModel)]="workerobj.PhoneNumber" formControlName="PhoneNumber" />
+                                            <label class="form-label" for="form3Example4c">PhoneNo</label>
+                                            <div style="color: red;"
+                                                *ngIf="submitted && f['PhoneNumber'].errors|| f['PhoneNumber']. dirty && f['PhoneNumber'].errors || f['PhoneNumber'].touched && f['PhoneNumber'].errors">
+                                                Phone no is required
+                                                <span style="color: red;"
+                                                    *ngIf="f['PhoneNumber'].errors?.['pattern']">You
+                                                    Must Be Valid One</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-briefcase fa-lg me-3 fa-fw mb-4"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="text" id="form3Example4cd" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f['Work'].errors || f['Work'].touched&& f['Work'].errors }"
+                                                formControlName="Work" [(ngModel)]="workerobj.Work" />
+                                            <label class="form-label" for="form3Example4cd">Work</label>
+                                            <div
+                                                *ngIf="submitted && f['Work'].errors|| f['Work'].touched&& f['Work'].errors">
+                                                <p style="color: red;">Work is required</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-address-book fa-lg me-3 fa-fw mb-4"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="text" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f['Address'].errors || f['Address'].touched&& f['Address'].errors }"
+                                                formControlName="Address" [(ngModel)]="workerobj.Address"/>
+                                            <label class="form-label">Address</label>
+                                            <div
+                                                *ngIf="submitted && f['Address'].errors|| f['Address'].touched&& f['Address'].errors">
+                                                <p style="color: red;">Address is required</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                    class="img-fluid" alt="Sample image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

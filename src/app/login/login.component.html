@@ -1,0 +1,42 @@
+<body>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="box">
+            <div class="form">
+                <h2>Login</h2>
+                <div class="inputBox">
+                    <span>Username</span>
+                    <input class="form-control" formControlName="emailId" [ngClass]="{ 'border-danger && is-invalid': submitted &&
+                    f['emailId'].errors || f['emailId'].touched && f['emailId'].errors }" required>
+                    <i></i>
+                </div>
+                <div style="color: red;"
+                    *ngIf="submitted && f['emailId'].errors|| f['emailId']. dirty && f['emailId'].errors || f['emailId'].touched && f['emailId'].errors">
+                    Please Enter Your Email
+                    <span style="color: red;" *ngIf="f['emailId'].errors?.['pattern']"> Must Be Valid One</span>
+                </div>
+
+                <div class="inputBox">
+                    <span>Password</span>
+                    <input type="password" required="required" class="form-control" formControlName="password"
+                        [ngClass]="{ 'is-invalid': submitted && f['password'].errors || f['password'].touched&& f['password'].errors }"
+                        [(ngModel)]="password" #passwordInput />
+
+                    <i (click)="showPassword = !showPassword"></i>
+
+                </div>
+                <!-- <i (click)="togglePasswordVisibility()" class="bx bx-show" style="color: white;"></i> -->
+                <div *ngIf="submitted && f['password'].errors|| f['password'].touched&& f['password'].errors">
+                    <p style="color: red;">Password is required</p>
+                </div>
+
+                <input type="submit" class=" mt-4" value="Login">
+
+                <div class="text-center text-lg-start mb-3 mt-2 pt-2">
+                    <p class="small fw-bold pt-1 text-light">Don't have an account? <a
+                            class="link-danger" [routerLink]="['/signin']">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>

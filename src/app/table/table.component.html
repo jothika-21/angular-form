@@ -1,0 +1,35 @@
+<div class="container mt-5 my-3 ">
+<button class="btn-success"><a class=" text-decoration-none text-light" routerLink='/register'> Go To RegisterForm</a></button>
+</div>
+
+
+<div class="container table-responsive-lg mt-5">
+    <table class="table table-hover">
+        <thead class=" table-dark">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">DateOfBirth</th>
+                <th scope="col">PhonerNo</th>
+                <th scope="col">Email</th>
+                <th scope="col">Qualification</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let control of Register; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{control.names}}</td>
+                <td>{{control.dateofbirth}}</td>
+                <td>{{control.phone}}</td>
+                <td>{{control.emailId}}</td>
+                <td>{{control.qualification}}</td>
+                <td>{{control.experience}}</td>
+                <td><button type="button" class="btn-primary"><a class=" text-decoration-none text-light" routerLink="/register/{{control.id}}"> Edit</a></button></td>
+                <td><button type="button" class="btn-danger"(click)=delete(control.id) >Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

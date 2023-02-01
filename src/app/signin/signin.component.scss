@@ -1,0 +1,21 @@
+.input-icon-container {
+    position: relative;
+  }
+  
+  .password-icon, .box-icon {
+    position: absolute;
+    right: 27px;
+    top: 27%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .box-icon {
+    right: 30px;
+  }
+  
+  .text-type {
+    font-family: monospace;
+  }
+  
